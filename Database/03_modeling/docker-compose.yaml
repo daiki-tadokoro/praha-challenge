@@ -1,0 +1,17 @@
+services:
+  db:
+    build: .
+    container_name: mysql_modeling_03
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: modeling_03_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3307:3307"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
