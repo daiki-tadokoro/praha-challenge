@@ -43,3 +43,9 @@ WHERE Articles.created_by = '1'
 
 INSERT INTO Article_histories (id, article_id, edited_by, title, body, visibility) VALUES ('10', '5', '1', 'Article 5', 'This is the fifth article5', 'archive');
 UPDATE Articles SET latest_history_id = '10' WHERE id = '5';
+
+-- 特定の記事の履歴を一覧表示できる
+
+SELECT Article_histories.*
+FROM Article_histories
+WHERE article_id = '5';
