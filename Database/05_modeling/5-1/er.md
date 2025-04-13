@@ -25,8 +25,8 @@
 
 - 削除は論理削除のみ
 
-ArticleHistories.visibility でステータス(draft, published, archived)を管理しており
-削除時は、archivedに変更するのみとする。
+ArticleHistories.visibility でステータス(draft, published, archive)を管理しており
+削除時は、archiveに変更するのみとする。
 
 - UPDATEのSQLは(なるべく) 避ける
 
@@ -64,7 +64,7 @@ erDiagram
     int edited_by FK "Users.id"
     string title
     text body
-    enum visibility "draft, published, archived"
+    enum visibility "draft, published, archive"
     timestamp created_at
   }
 ```

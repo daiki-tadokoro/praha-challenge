@@ -28,7 +28,7 @@ UPDATE Articles SET latest_history_id = '9' WHERE id = '5';
 
 SELECT Articles.id, Article_histories.*
   FROM Articles
-  JOIN Article_histories ON Article_histories.id = Articles.id
+  JOIN Article_histories ON Article_histories.id = Articles.latest_history_id
   WHERE Article_histories.visibility = "public";
 
 -- ユーザー1が作成した記事の最新状態を取得

@@ -10,8 +10,8 @@ CREATE TABLE Articles (
     id VARCHAR(36) PRIMARY KEY,
     latest_history_id VARCHAR(36),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    created_by VARCHAR(36) NOT NULL,
-    CONSTRAINT fk_articles_latest_history_id FOREIGN KEY (latest_history_id) REFERENCES Article_histories(id)
+    created_by int NOT NULL,
+    CONSTRAINT fk_articles_latest_history_id FOREIGN KEY (latest_history_id) REFERENCES Article_histories(id),
     CONSTRAINT fk_articles_created_by FOREIGN KEY (created_by) REFERENCES Users(id)
 );
 
