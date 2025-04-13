@@ -55,8 +55,7 @@ erDiagram
   Articles {
     int id PK
     int created_by FK "Users.id"
-    varchar(36) latest_history_id FK "History.id"
-    timestamp created_at
+    int latest_history_id FK "ArticleHistories.id"
   }
 
   ArticleHistories {
