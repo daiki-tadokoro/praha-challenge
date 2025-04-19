@@ -20,14 +20,3 @@ UPDATE Articles SET latest_history_id = '1' WHERE id = '1';
 UPDATE Articles SET latest_history_id = '2' WHERE id = '2';
 UPDATE Articles SET latest_history_id = '3' WHERE id = '3';
 UPDATE Articles SET latest_history_id = '4' WHERE id = '4';
-
-
--- INDEX 追加
--- Article_histories から特定記事の履歴一覧を取りたい場合
-CREATE INDEX idx_article_histories_article_id ON Article_histories(article_id);
-
--- 公開中の記事だけ一覧に出したい場合（visibility を WHERE で絞る）
-CREATE INDEX idx_article_histories_visibility ON Article_histories(visibility);
-
--- Articles の作成者ごとの記事をよく見るなら
-CREATE INDEX idx_articles_created_by ON Articles(created_by);
